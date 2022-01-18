@@ -2,7 +2,7 @@
 
 This small task tray programm will let you add shortcuts to open selected programs on the fly.
 
-##Usage
+## Usage
 After starting the program, a task tray icon will appear. Right clicking this icon will display a context menu with different options.
 To add program shortcuts select `config`.
 
