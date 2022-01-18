@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QuickLaunch
@@ -35,11 +36,8 @@ namespace QuickLaunch
             string title = textBoxTitle.Text;
             string path = textBoxPath.Text;
 
-            title = title.Trim();
-            path = path.Trim();
-
-            title.Replace(";", "");
-            path.Replace(";", "");
+            title = CleanString(title);
+            path = CleanString(path);
 
             path = Path.GetFullPath(path);
 
@@ -58,11 +56,8 @@ namespace QuickLaunch
             string title = textBoxTitle.Text;
             string path = textBoxPath.Text;
 
-            title = title.Trim();
-            path = path.Trim();
-
-            title.Replace(";", "");
-            path.Replace(";", "");
+            title = CleanString(title);
+            path = CleanString(path);
 
             path = Path.GetFullPath(path);
 
@@ -102,6 +97,14 @@ namespace QuickLaunch
                 buttonDelete.Enabled = false;
                 buttonSave.Enabled = false;
             }
+        }
+
+        private string CleanString(string s)
+        {
+            s = s.Trim();
+            s.Replace(";", String.Empty);
+            s = Regex.Replace(s, @"\t|\n|\r", String.Empty);
+            return s;
         }
     }
 }
