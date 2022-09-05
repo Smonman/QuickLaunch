@@ -1,4 +1,4 @@
-# QuickLaunch WIP
+# QuickLaunch
 
 This small task tray programm will let you add shortcuts to open selected programs on the fly.
 
